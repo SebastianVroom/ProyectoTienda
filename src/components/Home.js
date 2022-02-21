@@ -6,13 +6,10 @@ import Produ from "./Produ"
 
 
 class Home extends React.Component{
-    constructor(props){
-        super(props)
-    }
     render(){
         return <div>
             <Header></Header>
-            <div>{this.procProd}</div>
+            <div class='main'>{this.procProd}</div>
             <Footer></Footer>
             </div>
     }
