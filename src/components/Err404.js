@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from './Footer'
 import Header from './Header'
-class Error extends React.Component{
+class Error extends React.Component{//Pagina de Error
     render(){
         return <div><Header></Header>
         <h1>Parece que la pagina que buscas no existe, use el menu de navegacion para volver</h1>

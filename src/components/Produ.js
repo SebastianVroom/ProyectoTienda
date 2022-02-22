@@ -5,7 +5,7 @@ class Produ extends React.Component{
         this.state={cant : 1, click :false}
         this.handleChange = this.handleChange.bind(this);
     }
-    render(){
+    render(){//carta el producto
         const clicked = this.state.click
         if (clicked){
             return <div onMouseLeave={()=>this.toggleoff()}><img src={this.props.el.img} alt={this.props.el.nom}/><h2>Producto: {this.props.el.nom}</h2><p>Detalles: {this.props.el.desc}</p><p>precio:{this.props.el.prec}€</p>
@@ -18,7 +18,7 @@ class Produ extends React.Component{
         event.stopPropagation()
         this.setState({cant: event.target.value});
     }
-    toggleon(){
+    toggleon(){//logica para carta detallada
         this.setState({click:true})
     }
     toggleoff(){

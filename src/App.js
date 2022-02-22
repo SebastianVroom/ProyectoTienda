@@ -6,7 +6,7 @@ import Car from './components/Carrito'
 import Error from './components/Err404';
 
 class App extends React.Component{
-  productos=[
+  productos=[//lista de productos
     {nom:'Fresas',desc:'Aun en epoca',img:'prod1fre.jpg',prec:10},
     {nom:'Osito de peluche',desc:'Busca un nuevo hogar',img:'prod2osi.jpg',prec:68.99},
     {nom:'Cubo de rubik',desc:'Ligeramente usado, no mas cerca de estar resuelto',img:'prod3rub.jpg',prec:5},
@@ -20,7 +20,7 @@ class App extends React.Component{
     this.addCarrito = this.addCarrito.bind(this)
     this.modCarrito = this.modCarrito.bind(this)
   }
-  render(){
+  render(){//3 rutas Home, carrito y Error
     return (
       <div>
         <Routes>
@@ -31,7 +31,7 @@ class App extends React.Component{
       </div>
     );
   }
-  modCarrito (nom,c){
+  modCarrito (nom,c){//modificar cantidad de elemento
     let resul=this.state.carrito
     for (let i = 0;i<resul.length;i++){
       console.log(i)
@@ -43,12 +43,10 @@ class App extends React.Component{
       }
     }
     this.setState({carrito:resul})
-    console.log(this.state.carrito)
-    this.forceUpdate()
     this.guardarCarrito()
   }
 
-  addCarrito (el,c){
+  addCarrito (el,c){//añadir elemento al carrito
     let encon = false
     let resul=this.state.carrito
     for (let obj of resul){
@@ -61,23 +59,22 @@ class App extends React.Component{
       resul.push({nom:el.nom,desc:el.desc,img:el.img,prec:el.prec, cant:parseInt(c)})
     }
     this.setState({carrito:resul})
-    console.log(resul)
     this.guardarCarrito()
   }
 
-  elicar = (index)=>{
+  elicar = (index)=>{//Eliminar elemento de carrito
     let resul=this.state.carrito
     resul.splice(index,1)
     this.setState({carrito:resul})
   }
 
-  componentDidMount(){
+  componentDidMount(){//cargar de localStorage
     if(localStorage['carrito']){
       this.setState({carrito:JSON.parse(localStorage['carrito'])})
     }
   }
 
-  guardarCarrito(){
+  guardarCarrito(){//guardar a localStorage
     localStorage.setItem("carrito",JSON.stringify(this.state.carrito))
   }
 }

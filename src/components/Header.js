@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
 import React from 'react'
 class Header extends React.Component{
-    render(){
+    render(){//Enlaces para navegacion
         return <header>
             <nav>
                 <ul>

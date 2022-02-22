@@ -1,6 +1,6 @@
 import React from 'react'
 class Footer extends React.Component{
-    render(){
+    render(){//Texto decorativo
         return <footer>
             <div><p>Contacto</p></div>
             <div><p>Localizacion</p></div>

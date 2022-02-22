@@ -8,7 +8,7 @@ class Car extends React.Component{
         this.modicar = this.modicar.bind(this)
         this.elimcar = this.elimcar.bind(this)
     }
-    render(){
+    render(){//muestra todos los objetos del carrito
         const total = this.props.car.reduce((acc,el)=>acc + (parseFloat(el.prec) * parseInt(el.cant)),0)
         const carrito = this.props.car.map((el,index)=>{return <li key={el.nom.toString()}>
         <img src={el.img} alt={el.nom}/>
@@ -26,7 +26,7 @@ class Car extends React.Component{
         <Footer></Footer>
         </div>
     }
-    modicar(nom,c){
+    modicar(nom,c){// funciones de componente padre
         this.props.modcar(nom,c)
     }
     elimcar(index){

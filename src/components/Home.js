@@ -6,7 +6,7 @@ import Produ from "./Produ"
 
 
 class Home extends React.Component{
-    render(){
+    render(){//Crea lista a partir de componentes Produ
         return <div>
             <Header></Header>
             <div class='main'>{this.procProd}</div>
